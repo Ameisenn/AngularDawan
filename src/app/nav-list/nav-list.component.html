@@ -1,0 +1,6 @@
+
+<!-- ré^ète l'élément li pour chaque élément du tableau tasks -->
+<h2 class="shadow">There is your amazing to do LIST</h2>
+<ul class="list-group shadow">
+  <li class="list-group-item shadow btn btn-block btn" *ngFor="let task of taskList" (click)="select(task)">{{ task.name }}</li>
+</ul>

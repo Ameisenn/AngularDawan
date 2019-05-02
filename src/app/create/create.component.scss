@@ -1,0 +1,14 @@
+button {
+  height: 4em;
+  border-style: none;
+
+}
+.ng-invalid {
+  box-shadow: red;
+}
+.error {
+  background: darkred;
+  color:white;
+  font-weight: bold;
+  padding: 1em;
+}

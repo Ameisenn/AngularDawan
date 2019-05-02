@@ -1,0 +1,22 @@
+<form class="list-group-item" (ngSubmit)="addTask(); form.reset()" #form="ngForm">
+  <div>
+    <label for="create[name]">Nom</label>
+    <input id="create[name]" name="name" [(ngModel)]="newTask.name"
+           #inputName="ngModel" required pattern="[a-zA-Z0-9 -]*">
+    <p class="error" [hidden]="form.valid || inputName.untouched">Vous ne pouvez que utiliser que des lettres, des chiffres et espaces</p>
+  </div>
+  <div>
+    <label for="create[deadLine]">Echéance</label>
+    <input type="date" id="create[deadLine]" name="deadLine" [(ngModel)]="newTask.deadLine"required>
+  </div>
+  <div>
+    <label for="create[status]">Statut</label>
+    <select id="create[status]" name="status" [(ngModel)]="newTask.status" required>
+      <option value="Todo">A faire</option>
+      <option value="Doing">En cours</option>
+      <option value="Done">Fait</option>
+    </select>
+  </div>
+  <button class="btn btn-success" [disabled]="form.invalid">Encore du travail ?</button>
+
+</form>
